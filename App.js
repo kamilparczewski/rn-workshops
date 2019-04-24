@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, TextInput } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 
 import { colors } from './helpers'
 
@@ -19,6 +19,10 @@ export default class App extends React.Component {
     })
   };
 
+  onAddWeight = () => {
+    console.log(this.state.BMI);
+  };
+
   render() {
     return (
       <View style={styles.mainView}>
@@ -32,6 +36,11 @@ export default class App extends React.Component {
             placeholder="Please type your BMI"
             placeholderTextColor={colors.blue}
           />
+
+          <TouchableOpacity style={styles.button} onPress={this.onAddWeight}>
+            <Text style={styles.buttonText}>ADD WEIGHT</Text>
+          </TouchableOpacity>
+
 
           <Text>BMI: {this.state.BMI}</Text>
         </View>
@@ -65,5 +74,17 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     fontWeight: 'bold',
     color: colors.blue
+  },
+  button: {
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 40,
+    backgroundColor: colors.blue,
+    marginVertical: 20
+  },
+  buttonText: {
+    color: colors.white,
+    fontWeight: 'bold',
   },
 });
