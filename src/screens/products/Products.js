@@ -1,17 +1,16 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { StyleSheet } from "react-native";
 
-import { ScreenContainer } from '../../components'
+import { ScreenContainer } from "../../components";
 
 export default class Products extends React.Component {
+  state = {
+    loading: false,
+    products: []
+  };
+
   render() {
-    return (
-      <ScreenContainer>
-        <View>
-          <Text>Products</Text>
-        </View>
-      </ScreenContainer>
-    );
+    return <ScreenContainer />;
   }
 }
 
