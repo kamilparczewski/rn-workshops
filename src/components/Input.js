@@ -1,11 +1,12 @@
 import React from 'react';
-import { View, StyleSheet, Text, TextInput } from 'react-native';
+import { View, StyleSheet, TextInput } from 'react-native';
 
+import Label from './Label';
 import { colors } from "../utils";
 
 const Input = (props) => (
   <View style={styles.inputWrapper}>
-    {props.label ? <Text style={styles.label}>{props.label}</Text> : null}
+    {props.label ? <Label text={props.label} /> : null}
     <TextInput
       {...props}
       style={styles.input}
@@ -32,12 +33,6 @@ const styles = StyleSheet.create({
     borderBottomWidth: 3,
     borderRadius: 3,
     borderColor: colors.blue,
-  },
-  label: {
-    width: '100%',
-    justifyContent: 'flex-start',
-    fontWeight: 'bold',
-    color: colors.blue
   },
 });
 
