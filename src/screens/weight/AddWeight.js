@@ -30,6 +30,7 @@ export default class AddWeight extends React.Component {
       <View>
         <View style={styles.inputWrapper}>
           <Input
+            keyboardType="numeric"
             label="WEIGHT"
             onChange={this.onChange('weight')}
             value={weight}
