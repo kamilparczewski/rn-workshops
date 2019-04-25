@@ -1,9 +1,8 @@
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
-
 import { Ionicons } from '@expo/vector-icons'; // https://expo.github.io/vector-icons/
 
-import { colors } from "../helpers";
+import { colors } from "../utils";
 
 const IconButton = ({onPress, icon}) => (
   <TouchableOpacity style={styles.button} onPress={onPress}>

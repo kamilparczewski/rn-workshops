@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Text, TextInput } from 'react-native';
-import { colors } from "../helpers";
+
+import { colors } from "../utils";
 
 const Input = (props) => (
   <View style={styles.inputWrapper}>

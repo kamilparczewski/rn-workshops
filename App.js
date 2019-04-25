@@ -2,13 +2,13 @@ import React from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, FlatList } from 'react-native';
 
 // Components
-import TextButton from "./components/TextButton";
-import IconButton from "./components/IconButton";
-import Input from "./components/Input";
-import WeightRow from "./components/WeightRow";
+import TextButton from "./src/components/TextButton";
+import IconButton from "./src/components/IconButton";
+import Input from "./src/components/Input";
+import WeightRow from "./src/components/WeightRow";
 
 // Helpers
-import { colors } from './helpers'
+import { colors } from './src/utils'
 
 export default class App extends React.Component {
   constructor(props) {

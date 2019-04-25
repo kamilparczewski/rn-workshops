@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { colors } from "../helpers";
+
 import IconButton from "./IconButton";
+import { colors } from "../utils";
 
 const WeightRow = ({weight, date, onEdit, onDelete}) => (
   <View style={styles.row}>
