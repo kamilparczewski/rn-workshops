@@ -11,21 +11,38 @@ export default class AddWeight extends React.Component {
       date: '',
       weight: null,
     };
+
+    this.onChange = this.onChange.bind(this);
   }
+
+  onChange(stateKey) {
+    return (value) => {
+      this.setState({
+        [stateKey]: value,
+      });
+    };
+  }
+
   render() {
     const { date, weight } = this.state;
 
     return (
       <View>
-        <Input
-          label="WEIGHT"
-          value={weight}
-        />
+        <View style={styles.inputWrapper}>
+          <Input
+            label="WEIGHT"
+            onChange={this.onChange('weight')}
+            value={weight}
+          />
+        </View>
 
-        <Input
-          label="DATE"
-          value={date}
-        />
+        <View style={styles.inputWrapper}>
+          <Input
+            label="DATE"
+            onChange={this.onChange('date')}
+            value={date}
+          />
+        </View>
 
         <TextButton
           text="SAVE"
@@ -35,4 +52,8 @@ export default class AddWeight extends React.Component {
   }
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  inputWrapper: {
+    marginVertical: 10,
+  },
+});

@@ -1,12 +1,14 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Keyboard, StyleSheet, View, TouchableWithoutFeedback } from 'react-native';
 
 import { colors } from "../utils";
 
 const ScreenContainer = ({ children }) => (
-  <View style={styles.container}>
-    {children}
-  </View>
+  <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
+    <View style={styles.container}>
+      {children}
+    </View>
+  </TouchableWithoutFeedback>
 );
 
 const styles = StyleSheet.create({
