@@ -9,6 +9,24 @@ export default class Products extends React.Component {
     products: []
   };
 
+  componentDidMount() {
+    this.setState({
+      loading: true
+    });
+    fetch("http://193.70.34.240/rnapi/api/v1/products")
+      .then(response => response.json())
+      .then(response =>
+        this.setState({
+          products: response
+        })
+      )
+      .then(() => {
+        this.setState({
+          loading: false
+        });
+      });
+  }
+
   render() {
     return <ScreenContainer />;
   }
