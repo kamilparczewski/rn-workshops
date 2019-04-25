@@ -12,7 +12,16 @@ export default class Weight extends React.Component {
       bmi: 20,
       weights: mocks.weights,
     };
+
+    this.goToAddWeightScreen = this.goToAddWeightScreen.bind(this);
   }
+
+  goToAddWeightScreen() {
+    const { navigation } = this.props;
+
+    navigation.navigate('AddWeight');
+  }
+
   render() {
     const { bmi, weights } = this.state;
 
@@ -30,7 +39,7 @@ export default class Weight extends React.Component {
           </View>
 
           <TextButton
-            onPress={() => { console.log('Add weight') }}
+            onPress={this.goToAddWeightScreen}
             text="ADD WEIGHT"
           />
         </View>
