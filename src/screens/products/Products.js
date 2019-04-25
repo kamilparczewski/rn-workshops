@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet, FlatList } from "react-native";
 
 import { ScreenContainer } from "../../components";
 
@@ -28,7 +28,23 @@ export default class Products extends React.Component {
   }
 
   render() {
-    return <ScreenContainer />;
+    const { loading, products } = this.state;
+
+    if (loading) {
+      return <Text>Loading</Text>;
+    }
+    <ScreenContainer>
+      <FlatList
+        data={products}
+        renderItem={({ item }) => (
+          <Text style={styles.row}>
+            {item.name}
+            {item.description}
+          </Text>
+        )}
+        keyExtractor={(item, index) => index.toString()}
+      />
+    </ScreenContainer>;
   }
 }
 
