@@ -1,14 +1,5 @@
-import React from 'react';
+import { createAppContainer } from 'react-navigation';
 
-import { ScreenContainer } from './src/components';
-import { AddWeight, Products, Profile, Weight } from './src/screens';
+import AppNavigation from './src/navigation';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <ScreenContainer>
-        <Profile />
-      </ScreenContainer>
-    )
-  }
-}
+export default createAppContainer(AppNavigation);

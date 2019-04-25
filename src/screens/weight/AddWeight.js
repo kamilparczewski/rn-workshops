@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import { Input, TextButton } from '../../components'
+import { Input, TextButton, ScreenContainer } from '../../components'
 
 export default class AddWeight extends React.Component {
   constructor(props) {
@@ -27,28 +27,30 @@ export default class AddWeight extends React.Component {
     const { date, weight } = this.state;
 
     return (
-      <View>
-        <View style={styles.inputWrapper}>
-          <Input
-            keyboardType="numeric"
-            label="WEIGHT"
-            onChange={this.onChange('weight')}
-            value={weight}
+      <ScreenContainer>
+        <View>
+          <View style={styles.inputWrapper}>
+            <Input
+              keyboardType="numeric"
+              label="WEIGHT"
+              onChange={this.onChange('weight')}
+              value={weight}
+            />
+          </View>
+
+          <View style={styles.inputWrapper}>
+            <Input
+              label="DATE"
+              onChange={this.onChange('date')}
+              value={date}
+            />
+          </View>
+
+          <TextButton
+            text="SAVE"
           />
         </View>
-
-        <View style={styles.inputWrapper}>
-          <Input
-            label="DATE"
-            onChange={this.onChange('date')}
-            value={date}
-          />
-        </View>
-
-        <TextButton
-          text="SAVE"
-        />
-      </View>
+      </ScreenContainer>
     );
   }
 }
