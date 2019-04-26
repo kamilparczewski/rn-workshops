@@ -1,12 +1,13 @@
-import IconButton from './IconButton';
-import Input from './Input';
-import Label from './Label';
-import Picker from './Picker';
-import ScreenContainer from './ScreenContainer';
-import TabBarIcon from './TabBarIcon';
-import TextButton from './TextButton';
-import WeightRow from './WeightRow';
-import WeightList from './WeightList';
+import IconButton from "./IconButton";
+import Input from "./Input";
+import Label from "./Label";
+import Picker from "./Picker";
+import ScreenContainer from "./ScreenContainer";
+import TabBarIcon from "./TabBarIcon";
+import TextButton from "./TextButton";
+import WeightRow from "./WeightRow";
+import WeightList from "./WeightList";
+import ProductItem from "./ProductItem";
 
 export {
   IconButton,
@@ -18,4 +19,5 @@ export {
   TextButton,
   WeightRow,
   WeightList,
+  ProductItem
 };
