@@ -6,7 +6,7 @@ import { colors } from "../utils";
 const ProductItem = ({ item }) => (
   <View style={productStyles.container}>
     <View style={productStyles.textContainer}>
-      <Text style={productStyles.header}>{item.name}</Text>
+      <Text style={productStyles.name}>{item.name}</Text>
       <Text numberOfLines={3}>{item.description}</Text>
     </View>
     <Image

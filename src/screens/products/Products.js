@@ -1,7 +1,8 @@
 import React from "react";
-import { Text, FlatList } from "react-native";
+import { StyleSheet, Text, FlatList, View } from "react-native";
 
-import { ScreenContainer, ProductItem } from "../../components";
+import { colors } from "../../utils";
+import { ProductItem } from "../../components";
 
 export default class Products extends React.Component {
   state = {
@@ -35,31 +36,20 @@ export default class Products extends React.Component {
     }
 
     return (
-      <ScreenContainer>
+      <View style={styles.container}>
         <FlatList
-          data={[...products, ...list]}
+          data={products}
           renderItem={({ item }) => <ProductItem item={item} />}
           keyExtractor={({ id }) => id.toString()}
-          contentContainerStyle={{ flex: 1 }}
         />
-      </ScreenContainer>
+      </View>
     );
   }
 }
 
-const list = [
-  { id: 4, name: "test", description: "desc" },
-  { id: 5, name: "test", description: "desc" },
-  { id: 6, name: "test", description: "desc" },
-  { id: 7, name: "test", description: "desc" },
-  { id: 8, name: "test", description: "desc" },
-  { id: 9, name: "test", description: "desc" },
-  { id: 10, name: "test", description: "desc" },
-  { id: 11, name: "test", description: "desc" },
-  { id: 12, name: "test", description: "desc" },
-  { id: 13, name: "test", description: "desc" },
-  { id: 14, name: "test", description: "desc" },
-  { id: 15, name: "test", description: "desc" },
-  { id: 16, name: "test", description: "desc" },
-  { id: 17, name: "test", description: "desc" }
-];
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: colors.lightblue,
+    flex: 1
+  }
+});
