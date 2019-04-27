@@ -10,34 +10,44 @@ export default class Products extends React.Component {
     products: []
   };
 
-  async componentDidMount() {
+  componentDidMount() {
     this.setState({
       loading: true
     });
 
-    await fetch("http://193.70.34.240/rnapi/api/v1/products")
-      .then(response => response.json())
-      .then(response =>
-        this.setState({
-          products: response
-        })
-      );
+    this.fetchData();
 
     this.setState({
       loading: false
     });
   }
 
+  fetchData = () => {
+    fetch("http://193.70.34.240/rnapi/api/v1/products")
+      .then(response => response.json())
+      .then(response =>
+        this.setState({
+          products: response
+        })
+      );
+  };
+
   render() {
     const { loading, products } = this.state;
 
     if (loading) {
-      return <Text>Loading</Text>;
+      return (
+        <View style={styles.container}>
+          <Text>Loading</Text>
+        </View>
+      );
     }
 
     return (
       <View style={styles.container}>
         <FlatList
+          onRefresh={() => this.fetchData()}
+          refreshing={loading}
           data={products}
           renderItem={({ item }) => <ProductItem item={item} />}
           keyExtractor={({ id }) => id.toString()}
